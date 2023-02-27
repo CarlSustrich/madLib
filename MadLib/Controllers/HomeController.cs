@@ -8,8 +8,15 @@ namespace MadLib.Controllers
   {
 
     [Route("/")]
-    public ActionResult CodingForm() 
+    public ActionResult Splash() 
     {return View();}
+
+    [Route("/form")]
+    public ActionResult Form() {return View();}
+    [Route("/DAForm")]
+    public ActionResult DAForm() {return View();}
+    [Route("/CodingForm")]
+    public ActionResult CodingForm() {return View();}
 
     [Route("/TolkienMadLib")]
     public ActionResult TolkienMadLib(string fruit,string pluralnoun1, string noun1, string noun2, string pluralnoun2, string noun3, string sillyword)
@@ -40,6 +47,21 @@ namespace MadLib.Controllers
       newMadLib.Adjective2 = Adjective2; 
       return View(newMadLib);
 
+    }
+
+    [Route("/DragonAgeMadLib")]
+    public ActionResult DragonAgeMadLib(string DARace, string Animal, string Name, string Adverb1, string Adjective2, string DAClass, string Adjective3, string DATerm)
+    {
+      DAVariable newMadLib  = new DAVariable();
+      newMadLib.DARace = DARace;
+      newMadLib.Animal = Animal;
+      newMadLib.Name = Name;
+      newMadLib.Adverb1 = Adverb1;
+      newMadLib.Adjective2 = Adjective2;
+      newMadLib.DAClass = DAClass;
+      newMadLib.Adjective3 = Adjective3;
+      newMadLib.DATerm = DATerm;
+      return View(newMadLib);
     }
   }
 }
